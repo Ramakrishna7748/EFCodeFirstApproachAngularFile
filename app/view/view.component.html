@@ -1,0 +1,14 @@
+
+<div class="container mt-3">
+    <h2>{{result.customerFName}}</h2>
+    <p>Complete Data</p>
+    <div class="card" style="width:400px">
+      <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4IHOi0f1_QQhNJ75gSCtgdHvAHtIy0mvcrg&usqp=CAU" alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">FirstName:&nbsp;&nbsp; {{result.firstName}}</h4>
+        <h4 class="card-title">LastName:&nbsp;&nbsp;{{result.lastName}}</h4>
+        <p class="card-text">Country:&nbsp;&nbsp;{{result.country}}</p>
+        <p class="card-text">CreatedDate:&nbsp;&nbsp;{{result.createdDate}}</p>
+        <button type="button" class="btn btn-primary" (click)="backtoView()">BackToView</button>
+      </div>
+    </div>

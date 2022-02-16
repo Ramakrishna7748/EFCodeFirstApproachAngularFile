@@ -1,0 +1,27 @@
+<div class="container mb-4 " style="margin-top: 70px;">
+    
+    <form [formGroup]="addcustomer" (ngSubmit)="onSubmit()">
+        <div class="row mb-3 mt-3">
+          <h2 style="text-align: center; text-decoration: black;">UPDATE</h2>
+          <br>
+          <div class="col">
+                <label for="FirstName">FirstName</label>
+                <input type="text" id="FirstName" class="form-control" name="FirstName" formControlName="FirstName" placeholder="Enter First Name">
+          </div>
+          <div class="col">
+            <label for="LastName">LastName</label>
+            <input type="text" id="LastName" class="form-control" name="LastName" formControlName="LastName" placeholder="Enter Last Name" >
+          </div>
+        </div>
+    
+        <div class="row mb-3 mt-3">
+            <div class="col">
+                  <label for="Country">Country</label>
+                  <input type="text" id="Country" class="form-control" name="Country" formControlName="Country" placeholder="Enter Country">
+            </div>
+            
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+    </div>

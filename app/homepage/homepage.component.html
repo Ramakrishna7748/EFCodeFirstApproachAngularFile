@@ -1,0 +1,90 @@
+<div class="container mt-3">
+  <h2>Customer Management System</h2>
+  <br>
+  
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button type="button" class="btn btn-primary ms-1 float-Right"   data-bs-toggle="modal" data-bs-target="#myModal">
+      ADD CUSTOMER
+    </button>
+    </div>
+     
+  <table class="table table-striped">
+    
+    <thead>
+      <tr>
+        <th>CustomerId</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Country</th>
+        <th>CreatedDate</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of result">
+        <td>{{v.CustomerId}}</td>
+        <td>{{v.FirstName}}</td>
+        <td>{{v.LastName }}</td>
+        <td>{{v.Country}}</td>
+        <td>{{v.CreatedDate}}</td>
+        
+        <td><button type="button" (click)="deletecus(v.CustomerId)" class="btn btn-primary">Delete</button></td>
+        <td><button type="button" (click)="updatecus(v.CustomerId)" class="btn btn-primary">Edit</button></td>
+        <td><button type="button" (click)="viewcus(v.CustomerId)" class="btn btn-primary">View</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<!-- ADD CUSTOMER -->
+<!-- The Modal -->
+<div class="modal" id="myModal">
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h4 class="modal-title">Register</h4>
+      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+      <div class="container mb-4 " style="margin-top: 20px;">
+  
+        <form [formGroup]="addcustomer" (ngSubmit)="onSubmit()">
+            <div class="row mb-3 mt-3">
+              <div class="col">
+                    <label for="FirstName">FirstName</label>
+                    <input type="text" id="FirstName" class="form-control" name="FirstName" formControlName="FirstName" placeholder="Enter First Name">
+              </div>
+              <div class="col">
+                <label for="LastName">LastName</label>
+                <input type="text" id="LastName" class="form-control" name="LastName" formControlName="LastName" placeholder="Enter Last Name" >
+              </div>
+            </div>
+        
+            <div class="row mb-3 mt-3">
+                <div class="col">
+                      <label for="Country">Country</label> 
+                      <input type="text" id="Country" class="form-control" name="Country" formControlName="Country" placeholder="Enter Country">
+                </div>
+                <div class="col">
+                    <label for="CreatedDate">CreatedDate</label>
+                    <input type="date" id="CreatedDate" class="form-control" name="CreatedDate" formControlName="CreatedDate" placeholder="Enter Date&Time">
+              </div>
+              </div>
+          
+                <div class="col">
+              <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
